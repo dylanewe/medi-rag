@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+PyMuPDF
+openai
+transformers
+torch
+psycopg2-binary
+pgvector
+pydantic
+pydantic-settings
+python-dotenv
+python-multipart
+SQLModel
+numpy
+asyncio
+logging
