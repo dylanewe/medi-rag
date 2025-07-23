@@ -8,7 +8,7 @@ A sophisticated Retrieval-Augmented Generation (RAG) system specifically designe
 - **Semantic Sectioning**: Automated identification of medical document sections using GPT-4o-mini
 - **Medical Embeddings**: Uses bioBERT (dmis-lab/biobert-base-cased-v1.1) for domain-specific text embeddings
 - **Vector Search**: PostgreSQL with pgvector for efficient similarity search
-- **Re-ranking**: Reciprocal Score Enhancement (RSE) for improved retrieval accuracy
+- **Re-ranking**: Reranking retrieved chunks for improved retrieval accuracy
 - **RESTful API**: FastAPI-based web service for document upload and querying
 
 ## Project Structure
