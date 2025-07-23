@@ -33,7 +33,7 @@ class RAGPipeline:
         
         try:
             # Step 1: Embed user query
-            logger.info(f"Processing query: {user_query[:100]}...")
+            logger.info(f"Processing query: {user_query[:100]}...{document_id}")
             query_embedding = self.embedder.embed_query(user_query)
             
             # Step 2: Vector similarity search
@@ -66,7 +66,8 @@ class RAGPipeline:
                     "section": chunk["section_title"],
                     "page": chunk["page_number"],
                     "similarity_score": round(chunk["similarity_score"], 3),
-                    "document_id": chunk["document_id"]
+                    "document_id": chunk["document_id"],
+                    "text": chunk["chunk_text"][:100]  # Preview of chunk text
                 }
                 for chunk in re_ranked_chunks[:settings.top_k_context]
             ]
@@ -112,7 +113,7 @@ class RAGPipeline:
             section_bonus = 0
             medical_sections = ["diagnosis", "assessment", "treatment", "lab results", "examination"]
             if any(term in chunk["section_title"].lower() for term in medical_sections):
-                section_bonus = 0.05
+                section_bonus = 0.02
             
             # Calculate final re-ranking score
             chunk["rerank_score"] = base_score + keyword_bonus + section_bonus

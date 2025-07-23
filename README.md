@@ -30,6 +30,8 @@ medical-rag-system/
 ├── scripts/
 │   ├── __init__.py
 │   └── setup_database.py   # Database initialization script
+├── frontend/
+│   └── streamlit_app.py    # UI
 ├── requirements.txt        # Python dependencies
 ├── .env                    # Environment variables (create from template)
 └── README.md              # This file
@@ -95,6 +97,11 @@ The API will be available at `http://localhost:8000`
 Once the server is running, visit:
 - Interactive API docs: `http://localhost:8000/docs`
 - OpenAPI schema: `http://localhost:8000/openapi.json`
+
+### Starting the frontend server (Streamlit)
+```bash
+streamlit run frontend/streamlit_app.py 
+```
 
 ### API Endpoints
 
@@ -210,10 +217,6 @@ nvidia-smi
 
 1. **pgvector not installed:**
    ```bash
-   # Ubuntu/Debian
-   sudo apt install postgresql-14-pgvector
-   
-   # Or compile from source
    git clone https://github.com/pgvector/pgvector.git
    cd pgvector
    make
