@@ -1,7 +1,5 @@
 import streamlit as st
 import requests
-import json
-from io import BytesIO
 
 # Set page config
 st.set_page_config(

@@ -33,7 +33,7 @@ class RAGPipeline:
         
         try:
             # Step 1: Embed user query
-            logger.info(f"Processing query: {user_query[:100]}...{document_id}")
+            logger.info(f"Processing query: {user_query[:100]}...")
             query_embedding = self.embedder.embed_query(user_query)
             
             # Step 2: Vector similarity search
